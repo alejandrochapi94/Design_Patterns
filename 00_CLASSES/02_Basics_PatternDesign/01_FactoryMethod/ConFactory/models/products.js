@@ -1,4 +1,3 @@
-// products.js
 class PhysicalProduct {
   constructor({ name, price, weightKg, stock = 0 }) {
     this.type = "physical";

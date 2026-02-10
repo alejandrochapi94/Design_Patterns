@@ -1,4 +1,3 @@
-// productService.js (SIN FACTORY)
 class ProductService {
   createProduct(dto) {
     // dto: { type, name, price, weightKg, downloadUrl, stock }
@@ -12,7 +11,7 @@ class ProductService {
         weightKg: dto.weightKg,
         stock: dto.stock ?? 0,
         shippingCost() {
-          return this.weightKg * 1.2; // ejemplo
+          return this.weightKg * 1.2;
         },
       };
     } else if (dto.type === "digital") {
@@ -27,10 +26,9 @@ class ProductService {
         },
       };
     } else {
-      throw new Error("Tipo de producto no soportado");
+      throw new Error(`Tipo de producto no soportado: ${dto.type}`);
     }
 
-    // …guardar en DB, validar, etc.
     return product;
   }
 }
